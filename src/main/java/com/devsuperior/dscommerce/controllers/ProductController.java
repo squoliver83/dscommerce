@@ -45,12 +45,12 @@ public class ProductController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @PostMapping
-    public ResponseEntity<ProductDTO> insert(@Valid @RequestBody ProductDTO productDTO) {
-        productDTO = service.insert(productDTO);
+    public ResponseEntity<ProductDTO> insert(@Valid @RequestBody ProductDTO dto) {
+        dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(productDTO.getId())
+                .buildAndExpand(dto.getId())
                 .toUri();
-        return ResponseEntity.created(uri).body(productDTO);
+        return ResponseEntity.created(uri).body(dto);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")

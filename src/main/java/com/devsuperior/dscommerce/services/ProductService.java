@@ -37,9 +37,9 @@ public class ProductService {
     }
 
     @Transactional
-    public ProductDTO insert(ProductDTO productDTO) {
+    public ProductDTO insert(ProductDTO dto) {
         Product product = new Product();
-        copyDtoToEntity(productDTO, product);
+        copyDtoToEntity(dto, product);
         product = repository.save(product);
         return new ProductDTO(product);
     }
@@ -68,18 +68,17 @@ public class ProductService {
         }
     }
 
-    private void copyDtoToEntity(ProductDTO productDTO, Product product) {
-        product.setName(productDTO.getName());
-        product.setDescription(productDTO.getDescription());
-        product.setPrice(productDTO.getPrice());
-        product.setImgUrl(productDTO.getImgUrl());
+    private void copyDtoToEntity(ProductDTO dto, Product entity) {
+        entity.setName(dto.getName());
+        entity.setDescription(dto.getDescription());
+        entity.setPrice(dto.getPrice());
+        entity.setImgUrl(dto.getImgUrl());
 
-        product.getCategories().clear();
-        for (CategoryDTO catDto : productDTO.getCategories()) {
+        entity.getCategories().clear();
+        for (CategoryDTO catDto : dto.getCategories()) {
             Category cat = new Category();
             cat.setId(catDto.getId());
-            cat.setName(catDto.getName());
-            product.getCategories().add(cat);
+            entity.getCategories().add(cat);
         }
     }
 }
