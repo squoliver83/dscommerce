@@ -6,6 +6,7 @@ import com.devsuperior.dscommerce.entities.Order;
 import com.devsuperior.dscommerce.entities.OrderItem;
 import com.devsuperior.dscommerce.entities.OrderStatus;
 import com.devsuperior.dscommerce.entities.Product;
+import com.devsuperior.dscommerce.entities.User;
 import com.devsuperior.dscommerce.repositories.OrderItemRepository;
 import com.devsuperior.dscommerce.repositories.OrderRepository;
 import com.devsuperior.dscommerce.repositories.ProductRepository;
@@ -48,7 +49,8 @@ public class OrderService {
         order.setMoment(Instant.now());
         order.setStatus(OrderStatus.WAITING_PAYMENT);
 
-        order.setClient(userService.authenticated());
+        User user = userService.authenticated();
+        order.setClient(user);
 
         for(OrderItemDTO itemDTO: dto.getItems()) {
             Product product = productRepository.getReferenceById(itemDTO.getProductId());
