@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-DS Commerce é uma aplicação backend (API Rest) construída no módulo "Java Spring Essential", do curso "Java Spring Ultimate", sob orientação do professor Nélio Alves, na [DevSuperior](https://devsuperior.com.br "Site da DevSuperior").
+DS Commerce é uma aplicação backend (API Rest) construída no módulo "Java Spring Professional", do curso "Java Spring Ultimate", sob orientação do professor Nélio Alves, na [DevSuperior](https://devsuperior.com.br "Site da DevSuperior").
 Nela foram fornecidas várias funcionalidades para contemplar os requisitos do sistema, utilizando diversas tecnologias e desenvolvendo/avaliando-se muitas competências (descritas logo abaixo).
 
 ## Modelo conceitual
