@@ -41,7 +41,7 @@ Nela foram fornecidas várias funcionalidades para contemplar os requisitos do s
 - Controle de acesso em nível de regra de negócio
 - Realização de casos de uso
 
-## [Certificado](https://paragon.academy/c/5-170)
+## [Certificado](https://devsuperior.club/c/5-170)
   
 ## Autor
 
